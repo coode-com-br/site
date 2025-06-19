@@ -30,7 +30,7 @@ export default function Page() {
             Coode tecnologia
           </h1>
           <p className="mt-6 max-w-[60ch] text-lg">
-            Somos parceiro Seprol, especializados em serviços Red Hat.
+            Startup Seprol, especializada em serviços Red Hat.
           </p>
           <div className="mt-12 flex items-center gap-4">
             <Button asChild size="lg" className="rounded-full text-base">

@@ -1,103 +1,91 @@
+import { Button } from "@/components/ui/button";
+import { ArrowUpRight, CirclePlay } from "lucide-react";
+import React from "react";
 import Image from "next/image";
+import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
+import Navbar04Page from "@/components/layout/navbar-04";
+
+const features = [
+  {
+    title: "Operações",
+    description: "Find untapped areas to explore effortlessly.",
+  },
+  {
+    title: "DevOps",
+    description:
+      "O DevOps é uma abordagem à cultura, automação e design de plataforma destinada a oferecer maior valor de negócios e capacidade de resposta por meio da entrega rápida de serviços.",
+  },
+  {
+    title: "MLOps",
+    description: "Get actionable insights instantly at a glance.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <>
+      <Navbar04Page />
+      <div className="flex-col items-center justify-center">
+        <div className="max-w-screen-xl w-full mx-auto grid lg:grid-cols-2 gap-12 px-6 pb-10">
+          <div>
+            <h1 className="mt-6 max-w-[17ch] text-4xl md:text-5xl lg:text-[2.75rem] xl:text-5xl font-bold !leading-[1.2]">
+              C00DE tecnologia
+            </h1>
+            <p className="mt-6 max-w-[60ch] text-lg">
+              Startup Seprol, especializada em serviços Open Source - Red Hat.
+            </p>
+            <div className="mt-12 flex items-center gap-4">
+              <Button asChild size="lg" className="rounded-full text-base">
+                <Link href="https://seprol.com.br" target="_blank">
+                  Acesse Seprol <ArrowUpRight className="!h-5 !w-5" />
+                </Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="rounded-full text-base shadow-none"
+              >
+                <Link href="/dashboard" target="_blank">
+                  <CirclePlay className="!h-5 !w-5" /> Dashboard
+                </Link>
+              </Button>
+            </div>
+          </div>
+          <div className="w-full video bg-accent rounded-xl">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/seprol.png"
+              alt="logo"
+              width={0}
+              height={0}
+              sizes="100vw"
+              className="h-auto w-full object-center"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className="max-w-screen-xl mx-auto">
+          <Separator />
+        </div>
+        <div className="w-full py-12">
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-center">
+            Ignite Your Imagination
+          </h2>
+          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 max-w-md sm:max-w-screen-md lg:max-w-screen-lg w-full mx-auto px-6">
+            {features.map((feature) => (
+              <div key={feature.title} className="flex flex-col text-start">
+                <div className="mb-5 sm:mb-6 w-full aspect-[4/5] bg-muted rounded-xl" />
+                <span className="text-2xl font-semibold tracking-tight">
+                  {feature.title}
+                </span>
+                <p className="mt-2 max-w-[25ch] text-muted-foreground text-[17px]">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
