@@ -11,9 +11,10 @@ import { BookCheck, ChartPie, Goal } from "lucide-react";
 const features = [
   {
     icon: Goal,
-    title: "Infra como código",
+    title:
+      "Gerenciar contêineres que executam aplicativos e garantir que não haja tempo de inatividade",
     description:
-      "Easily uncover untapped areas to explore and expand your reach effortlessly.",
+      "Com o IaC, sua infraestrutura torna-se modular e reutilizável: componentes como servidores, redes, volumes e serviços podem ser estruturados em blocos independentes e recombináveis. Essa abordagem facilita a automação em larga escala, acelera o time-to-market e aumenta a eficiência operacional.",
   },
   {
     icon: BookCheck,

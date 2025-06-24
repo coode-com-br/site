@@ -1,31 +1,30 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { cn } from "@/lib/utils";
+import { cookies } from "next/headers";
 
 export const metadata: Metadata = {
   title: "CØØDE",
   description: "TI as code",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const activeThemeValue = cookieStore.get("active_theme")?.value;
+  const isScaled = activeThemeValue?.endsWith("-scaled");
+
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={cn(
+          "bg-background overscroll-none font-sans antialiased",
+          activeThemeValue ? `theme-${activeThemeValue}` : "",
+          isScaled ? "theme-scaled" : ""
+        )}
       >
         {children}
       </body>
